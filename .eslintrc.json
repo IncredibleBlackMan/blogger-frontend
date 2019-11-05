@@ -16,8 +16,20 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "import"
     ],
     "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "object-curly-newline": "off",
+        "function-paren-newline":"off",
+        "react/forbid-prop-types": [
+            "error",
+            {
+            "forbid": [
+                "any"
+            ]
+            }
+        ]
     }
 }
