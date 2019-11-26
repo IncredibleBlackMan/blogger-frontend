@@ -11,9 +11,9 @@ export const authUser = () => {
 
 export const authUserHeader = () => {
     const user = authUser();
-    if (user && user.token) {
+    if (user) {
         return {
-            Authorization: user.token,
+            Authorization: user,
         };
     }
     return {};
