@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'proptypes';
-import Input from './input';
-import Loader from './loader';
+import Input from './Input';
+import Loader from './Loader';
 import logo from '../assets/img/logo.png';
 
 class SignUpComponent extends Component {
@@ -20,8 +20,8 @@ class SignUpComponent extends Component {
     onSignUp = (event) => {
         event.preventDefault();
         const { password, confirm_password } = this.state;
+        const { signup } = this.props;
         if (password === confirm_password) {
-          const { signup } = this.props;
           signup(this.state);
         } else {
           this.setState({ passwordError: 'Passwords don\'t match.' });
@@ -35,7 +35,7 @@ class SignUpComponent extends Component {
         return(
             <div id="body" className="signup-body">
                 <div className="form-content">
-                    {success ? <Redirect to="/login.html" /> : null}
+                    {success ? <Redirect to="/login" /> : null}
                     <div className="logo">
                         <img src={ logo } alt="Blogger"/>
                     </div>
@@ -46,7 +46,7 @@ class SignUpComponent extends Component {
                             id="username"
                             placeholder="Username"
                             onChange={this.handleChange}
-                            defaultValue={username}
+                            value={username}
                             required
                         />
 
@@ -56,7 +56,7 @@ class SignUpComponent extends Component {
                             id="email" 
                             placeholder="Email"
                             onChange={this.handleChange}
-                            defaultValue={email}
+                            value={email}
                             required
                         />
 
@@ -66,7 +66,7 @@ class SignUpComponent extends Component {
                             id="password"
                             placeholder="Password"
                             onChange={this.handleChange}
-                            defaultValue={password}
+                            value={password}
                             required
                         />
 
@@ -76,7 +76,7 @@ class SignUpComponent extends Component {
                             id="confirm_password"
                             placeholder="Confirm Password"
                             onChange={this.handleChange}
-                            defaultValue={confirm_password}
+                            value={confirm_password}
                             required
                         />
 
