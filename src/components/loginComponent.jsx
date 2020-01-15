@@ -22,7 +22,7 @@ const LoginComponent = (props) => {
     return(
         <div id="body" className="login-body">
             <div className="form-content">
-                {success ? <Redirect to="/login.html" /> : null}
+                {success ? <Redirect to="/articles" /> : null}
                 <div className="logo">
                     <img src={ logo } alt="Blogger"/>
                 </div>
